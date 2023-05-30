@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">FunStory</string>
+    <string name="welcomemessage">Welcome to StoryApp!</string>
+    <string name="email">"Email"</string>
+    <string name="emailHint">Type your e-mail</string>
+    <string name="password">Password</string>
+    <string name="hintPassword">Type your Password</string>
+    <string name="log_in">Login</string>
+    <string name="account_question">Don’t have an account?</string>
+    <string name="account_question2">Already have an account?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="register">Register Now</string>
+    <string name="name">Name</string>
+    <string name="nameHint">Type your name</string>
+</resources>
