@@ -16,7 +16,8 @@
             android:exported="false" />
         <activity
             android:name=".AddStory"
-            android:exported="false" />
+            android:exported="true"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".Register"
             android:exported="false" />

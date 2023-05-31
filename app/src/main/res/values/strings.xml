@@ -5,11 +5,21 @@
     <string name="emailHint">Type your e-mail</string>
     <string name="password">Password</string>
     <string name="hintPassword">Type your Password</string>
-    <string name="log_in">Login</string>
+    <string name="log_in">Sign In</string>
     <string name="account_question">Don’t have an account?</string>
     <string name="account_question2">Already have an account?</string>
     <string name="sign_up">Sign Up</string>
     <string name="register">Register Now</string>
     <string name="name">Name</string>
     <string name="nameHint">Type your name</string>
+    <string name="add_story">Add Story</string>
+    <string name="signout">SignOut</string>
+    <string name="switch_camera">switch Camera</string>
+    <string name="capture">Capture</string>
+    <string name="add_your_story">Add Your Story</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="description_hint">Type your description</string>
+    <string name="upload">Upload</string>
+    <string name="description">Description</string>
 </resources>

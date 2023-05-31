@@ -47,8 +47,6 @@
             android:id="@+id/emailInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/welcome"
-
             app:boxBackgroundMode="none">
 
             <EditText
@@ -58,10 +56,11 @@
                 android:background="@drawable/login_edittext"
                 android:fontFamily="@font/inter_regular"
                 android:hint="@string/emailHint"
+                android:autofillHints="emailAddress"
                 android:paddingLeft="16dp"
                 android:paddingTop="9dp"
                 android:paddingRight="16dp"
-                android:textSize="14dp"
+                android:textSize="14sp"
                 android:inputType="textEmailAddress"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -89,7 +88,6 @@
             android:id="@+id/passwordInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_password"
             android:layout_marginTop="4dp"
             app:boxBackgroundMode="none">
 
@@ -104,7 +102,7 @@
                     android:paddingLeft="16dp"
                     android:paddingTop="9dp"
                     android:paddingRight="16dp"
-                    android:textSize="14dp" />
+                    android:textSize="14sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
