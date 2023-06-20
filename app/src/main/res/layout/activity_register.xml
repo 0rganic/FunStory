@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Register"
+    tools:context=".Ui.Register"
     android:gravity="center">
 
     <ProgressBar
@@ -13,7 +13,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:progressTint="@color/blue_dark" />
+        android:progressTint="@color/blue_dark"
+        android:visibility="gone"/>
 
     <TextView
         android:id="@+id/tv_register"
@@ -49,7 +50,7 @@
             app:boxBackgroundMode="none">
 
             <EditText
-                android:id="@+id/ed_register_name"
+                android:id="@+id/edt_register_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/login_edittext"
@@ -62,7 +63,7 @@
                 android:textSize="14sp"
                 android:inputType="text"
                 android:singleLine="true"
-                android:maxLength="10"/>
+                android:maxLength="50"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -133,18 +134,19 @@
             android:layout_marginTop="4dp"
             app:boxBackgroundMode="none">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <com.example.funstory.Ui.PasswordInput
+                android:alpha="1"
                 android:id="@+id/edt_password"
                 android:layout_width="match_parent"
-                android:layout_height="38dp"
-                android:background="@drawable/login_edittext"
-                android:fontFamily="@font/inter_regular"
+                android:layout_height="wrap_content"
                 android:hint="@string/hintPassword"
                 android:inputType="textPassword"
+                android:background="@drawable/login_edittext"
                 android:paddingLeft="16dp"
                 android:paddingTop="9dp"
                 android:paddingRight="16dp"
-                android:textSize="14sp" />
+                android:textColor="@color/black"
+                />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -154,7 +156,7 @@
 
     <Button
         android:background="@drawable/button_shape"
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_signup"
         android:layout_below="@id/linearlayout3"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
@@ -166,7 +168,7 @@
         />
 
     <LinearLayout
-        android:layout_below="@id/btn_login"
+        android:layout_below="@id/btn_signup"
         android:layout_height="wrap_content"
         android:layout_marginBottom="57dp"
         android:layout_marginEnd="81dp"
@@ -183,7 +185,7 @@
 
         <TextView
             android:fontFamily="@font/inter_bold"
-            android:id="@+id/sign_up"
+            android:id="@+id/sign_in"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_width="wrap_content"
@@ -191,6 +193,7 @@
             android:textColor="@color/blue_dark" />
 
     </LinearLayout>
+
 
 
 </RelativeLayout>

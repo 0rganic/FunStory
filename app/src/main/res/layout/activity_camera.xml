@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Camera">
+    tools:context=".Ui.Camera">
 
     <TextureView
         android:id="@+id/textureView"
@@ -18,7 +18,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
-        />
+        android:contentDescription="TODO" />
 
     <ImageButton
         android:id="@+id/btnSwitchCamera"
@@ -31,13 +31,13 @@
         android:src="@drawable/ic_flip_camera"
         android:contentDescription="@string/switch_camera" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnCapture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="32dp"
-        android:background="@drawable/button_camera_shape" />
+        android:src="@drawable/ic_button_camera"/>
 
 </RelativeLayout>

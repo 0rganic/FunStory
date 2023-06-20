@@ -22,4 +22,5 @@
     <string name="description_hint">Type your description</string>
     <string name="upload">Upload</string>
     <string name="description">Description</string>
+    <string name="new_story">new_story</string>
 </resources>

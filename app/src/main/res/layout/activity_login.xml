@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Login"
+    tools:context=".Ui.Login"
     android:gravity="center">
 
     <ProgressBar
@@ -84,27 +84,22 @@
             android:fontFamily="@font/inter_bold"
             android:text="@string/password" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/passwordInputLayout"
+        <com.example.funstory.Ui.PasswordInput
+            android:alpha="1"
+            android:id="@+id/edt_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            app:boxBackgroundMode="none">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edt_password"
-                    android:layout_width="match_parent"
-                    android:layout_height="38dp"
-                    android:background="@drawable/login_edittext"
-                    android:fontFamily="@font/inter_regular"
-                    android:hint="@string/hintPassword"
-                    android:inputType="textPassword"
-                    android:paddingLeft="16dp"
-                    android:paddingTop="9dp"
-                    android:paddingRight="16dp"
-                    android:textSize="14sp" />
-
-        </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginTop="10dp"
+            android:hint="@string/hintPassword"
+            android:inputType="textPassword"
+            android:background="@drawable/login_edittext"
+            android:paddingLeft="16dp"
+            android:layout_gravity="center_vertical"
+            android:paddingRight="16dp"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/grey_2"
+             />
 
 
     </LinearLayout>
