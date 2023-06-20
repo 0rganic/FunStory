@@ -8,13 +8,6 @@
     tools:context=".Ui.Register"
     android:gravity="center">
 
-    <ProgressBar
-        android:id="@+id/loading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:progressTint="@color/blue_dark"
-        android:visibility="gone"/>
 
     <TextView
         android:id="@+id/tv_register"
@@ -161,11 +154,19 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:text="@string/sign_up"
         android:textColor="@color/white"
         />
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:progressTint="@color/blue_dark"/>
+
 
     <LinearLayout
         android:layout_below="@id/btn_signup"

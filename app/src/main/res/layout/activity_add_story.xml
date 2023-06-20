@@ -15,16 +15,28 @@
         android:textSize="24sp"
         android:fontFamily="@font/inter_bold" />
 
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose Your Photo"
+            android:textSize="24sp"
+            android:fontFamily="@font/inter_bold"
+            android:layout_gravity="center"
+            />
     <ImageView
         android:id="@+id/preview_image_view"
         android:layout_width="350dp"
         android:layout_height="350dp"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
         android:scaleType="centerCrop"
         tools:src="@tools:sample/avatars" />
-
+    </FrameLayout>
     <LinearLayout
         android:id="@+id/linearlayout1"
         android:layout_width="match_parent"
@@ -36,14 +48,14 @@
         android:gravity="center">
 
         <Button
-            android:id="@+id/camera"
+            android:id="@+id/btn_camera"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="50dp"
             android:text="@string/camera"/>
 
         <Button
-            android:id="@+id/gallery"
+            android:id="@+id/btn_gallery"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/gallery"/>
@@ -61,7 +73,7 @@
         android:textSize="18sp"/>
 
     <EditText
-        android:id="@+id/ed_description"
+        android:id="@+id/edt_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -75,6 +87,7 @@
         android:textSize="14sp"/>
 
     <Button
+        android:id="@+id/btn_upload"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

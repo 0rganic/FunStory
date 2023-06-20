@@ -14,17 +14,16 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 private const val FILENAME_FORMAT = "dd-MMM-yyyy"
-private const val MAXIMAL_SIZE = 1000000
+private const val MAX_FILE_SIZE = 1000000
 
-
-val timeStamp: String = SimpleDateFormat(
+val currentTimestamp: String = SimpleDateFormat(
     FILENAME_FORMAT,
     Locale.US
 ).format(System.currentTimeMillis())
 
 fun createCustomTempFile(context: Context): File {
     val storageDir: File? = context.getExternalFilesDir(Environment.DIRECTORY_PICTURES)
-    return File.createTempFile(timeStamp, ".jpg", storageDir)
+    return File.createTempFile(currentTimestamp, ".jpg", storageDir)
 }
 
 fun createPhotoFile(application: Application): File {
@@ -36,10 +35,10 @@ fun createPhotoFile(application: Application): File {
         mediaDir != null && mediaDir.exists()
     ) mediaDir else application.filesDir
 
-    return File(outputDirectory, "$timeStamp.jpg")
+    return File(outputDirectory, "$currentTimestamp.jpg")
 }
 
-fun rotateFile(file: File, isBackCamera: Boolean = false) {
+fun rotateImageFile(file: File, isBackCamera: Boolean = false) {
     val matrix = Matrix()
     val bitmap = BitmapFactory.decodeFile(file.path)
     val rotation = if (isBackCamera) 90f else -90f
@@ -51,22 +50,22 @@ fun rotateFile(file: File, isBackCamera: Boolean = false) {
     result.compress(Bitmap.CompressFormat.JPEG, 100, FileOutputStream(file))
 }
 
-fun uriToFile(selectedImg: Uri, context: Context): File {
+fun uriToFile(selectedImageUri: Uri, context: Context): File {
     val contentResolver: ContentResolver = context.contentResolver
-    val myFile = createCustomTempFile(context)
+    val customTempFile = createCustomTempFile(context)
 
-    val inputStream = contentResolver.openInputStream(selectedImg) as InputStream
-    val outputStream: OutputStream = FileOutputStream(myFile)
-    val buf = ByteArray(1024)
-    var len: Int
-    while (inputStream.read(buf).also { len = it } > 0) outputStream.write(buf, 0, len)
+    val inputStream = contentResolver.openInputStream(selectedImageUri) as InputStream
+    val outputStream: OutputStream = FileOutputStream(customTempFile)
+    val buffer = ByteArray(1024)
+    var length: Int
+    while (inputStream.read(buffer).also { length = it } > 0) outputStream.write(buffer, 0, length)
     outputStream.close()
     inputStream.close()
 
-    return myFile
+    return customTempFile
 }
 
-fun reduceFileImage(file: File): File {
+fun reduceImageFile(file: File): File {
     val bitmap = BitmapFactory.decodeFile(file.path)
 
     var compressQuality = 100
@@ -78,7 +77,7 @@ fun reduceFileImage(file: File): File {
         val bmpPicByteArray = bmpStream.toByteArray()
         streamLength = bmpPicByteArray.size
         compressQuality -= 5
-    } while (streamLength > MAXIMAL_SIZE)
+    } while (streamLength > MAX_FILE_SIZE)
 
     bitmap.compress(Bitmap.CompressFormat.JPEG, compressQuality, FileOutputStream(file))
 
