@@ -3,6 +3,7 @@ package com.example.funstory.Ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Patterns
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -41,6 +42,7 @@ class Login : AppCompatActivity() {
                 val password = binding.edtPassword.text.toString()
                 when {
                     email.isEmpty() -> binding.edtEmail.error = "Email can't be empty"
+                    !Patterns.EMAIL_ADDRESS.matcher(email).matches() -> binding.edtEmail.error = "Invalid Email"
                     password.isEmpty() -> binding.edtPassword.error = "Password can't be empty "
                     else -> {
                         binding.loading.visibility = View.VISIBLE
