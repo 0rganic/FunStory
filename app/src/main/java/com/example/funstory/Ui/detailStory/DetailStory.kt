@@ -1,4 +1,4 @@
-package com.example.funstory.Ui
+package com.example.funstory.Ui.detailStory
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,13 +7,9 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
-import com.example.funstory.Ui.viewModel.DetailStoryViewModel
-import com.example.funstory.Ui.viewModel.MainViewModel
 import com.example.funstory.data.remote.response.Story
 import com.example.funstory.databinding.ActivityDetailStoryBinding
-import com.example.funstory.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
@@ -58,11 +54,11 @@ class DetailStory : AppCompatActivity() {
     }
 
     private fun displayStoryDetail(story: Story) {
-        binding.tvPostedBy.text = story.name
-        binding.edDescription.text = story.description
+        binding.tvDetailName.text = story.name
+        binding.tvDetailDescription.text = story.description
         Glide.with(this)
             .load(story.photoUrl)
-            .into(binding.imgDetail)
+            .into(binding.ivDetailPhoto)
 
     }
 }

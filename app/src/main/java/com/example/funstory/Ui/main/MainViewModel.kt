@@ -1,4 +1,4 @@
-package com.example.funstory.Ui.viewModel
+package com.example.funstory.Ui.main
 
 import androidx.lifecycle.ViewModel
 import com.example.funstory.data.remote.repository.AuthRepository

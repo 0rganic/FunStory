@@ -1,7 +1,6 @@
 package com.example.funstory.data.remote.retrofit
 
 import com.example.funstory.BuildConfig
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

@@ -12,11 +12,11 @@ import com.example.funstory.data.remote.response.Story
 
 class StoryAdapter(private val listStory: List<Story>, private val onItemClick: (story: Story) -> Unit) : RecyclerView.Adapter<StoryAdapter.ViewHolder>() {
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val tvDescription: TextView = itemView.findViewById(R.id.tv_description)
-        private val imgStory: ImageView = itemView.findViewById(R.id.img_story)
+        private val tvName: TextView = itemView.findViewById(R.id.tv_item_name)
+        private val imgStory: ImageView = itemView.findViewById(R.id.item_photo)
 
         fun bind(story: Story) {
-            tvDescription.text = story.name
+            tvName.text = story.name
 
             Glide.with(itemView.context)
                 .load(story.photoUrl)

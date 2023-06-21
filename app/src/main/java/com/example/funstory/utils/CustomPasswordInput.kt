@@ -1,7 +1,6 @@
 package com.example.funstory.Ui
 
 import android.content.Context
-import android.content.res.Configuration
 import android.graphics.Color
 import android.text.Editable
 import android.text.TextWatcher
@@ -63,8 +62,4 @@ class PasswordInput : AppCompatEditText {
         setTextColor(ContextCompat.getColor(context, textColor))
     }
 
-    private fun isDarkTheme(): Boolean {
-        val currentNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
-        return currentNightMode == Configuration.UI_MODE_NIGHT_YES
-    }
 }

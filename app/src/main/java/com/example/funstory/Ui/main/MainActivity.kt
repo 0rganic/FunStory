@@ -1,4 +1,4 @@
-package com.example.funstory.Ui
+package com.example.funstory.Ui.main
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -12,12 +12,13 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.funstory.R
 import com.example.funstory.Ui.adapter.StoryAdapter
-import com.example.funstory.Ui.viewModel.MainViewModel
+import com.example.funstory.Ui.addStory.AddStory
+import com.example.funstory.Ui.detailStory.DetailStory
+import com.example.funstory.Ui.login.Login
 import com.example.funstory.data.remote.response.Story
 import com.example.funstory.databinding.ActivityMainBinding
 import com.example.funstory.utils.SpaceItemDecoration
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
@@ -57,7 +58,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun logOut() {
         lifecycleScope.launch {
-            mainViewModel.logOut().collect(){ result ->
+            mainViewModel.logOut().collect { result ->
                 if (result.isSuccess){
                     Toast.makeText(this@MainActivity, "logout Success", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this@MainActivity, Login::class.java)

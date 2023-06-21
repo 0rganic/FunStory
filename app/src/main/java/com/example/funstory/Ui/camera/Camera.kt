@@ -1,4 +1,4 @@
-package com.example.funstory.Ui
+package com.example.funstory.Ui.camera
 
 import android.content.Intent
 import android.os.Build
@@ -13,12 +13,13 @@ import androidx.camera.core.ImageCaptureException
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
-import com.example.funstory.R
-import com.example.funstory.Ui.AddStory.Companion.CAMERA_X_RESULT
+import com.example.funstory.Ui.addStory.AddStory
+import com.example.funstory.Ui.addStory.AddStory.Companion.CAMERA_X_RESULT
 import com.example.funstory.databinding.ActivityCameraBinding
 import com.example.funstory.utils.createPhotoFile
 import dagger.hilt.android.AndroidEntryPoint
 
+@Suppress("DEPRECATION")
 @AndroidEntryPoint
 class Camera : AppCompatActivity() {
     private lateinit var binding: ActivityCameraBinding

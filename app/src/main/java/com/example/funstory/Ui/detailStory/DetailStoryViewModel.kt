@@ -1,31 +1,27 @@
-package com.example.funstory.Ui.viewModel
+package com.example.funstory.Ui.detailStory
 
 import androidx.lifecycle.ViewModel
 import com.example.funstory.data.remote.repository.AuthRepository
 import com.example.funstory.data.remote.repository.StoryRepository
-import com.example.funstory.data.remote.response.AddStory
+import com.example.funstory.data.remote.response.DetailStory
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
-import okhttp3.MultipartBody
 import javax.inject.Inject
 
+
 @HiltViewModel
-class AddStoryViewModel @Inject constructor(
+class DetailStoryViewModel @Inject constructor (
     private val storyRepository: StoryRepository,
     private val authRepository: AuthRepository
-): ViewModel() {
+    ) : ViewModel()   {
     fun getToken(): Flow<String?> {
         return authRepository.getToken()
     }
-
-    suspend fun addStory(
-        description: String,
-        photo: MultipartBody.Part,
-        lat: Double?,
-        lon: Double?,
+    fun getDetailStory(
+        id: String,
         authHeader: String
-    ): Flow<Result<AddStory>> {
-        return storyRepository.addStory(description, photo, lat, lon, authHeader)
+    ): Flow<Result<DetailStory>> {
+        return storyRepository.getStoryDetail(id, authHeader)
     }
 
 

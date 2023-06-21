@@ -12,7 +12,7 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/img_story"
+            android:id="@+id/item_photo"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:src="@drawable/img_example_story"
@@ -22,7 +22,7 @@
 
 
         <TextView
-            android:id="@+id/tv_description"
+            android:id="@+id/tv_item_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/inter_bold"

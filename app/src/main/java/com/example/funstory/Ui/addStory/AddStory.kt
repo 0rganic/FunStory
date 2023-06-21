@@ -1,4 +1,4 @@
-package com.example.funstory.Ui
+package com.example.funstory.Ui.addStory
 
 import android.Manifest
 import android.content.Intent
@@ -14,7 +14,8 @@ import androidx.activity.viewModels
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
-import com.example.funstory.Ui.viewModel.AddStoryViewModel
+import com.example.funstory.Ui.camera.Camera
+import com.example.funstory.Ui.main.MainActivity
 import com.example.funstory.databinding.ActivityAddStoryBinding
 import com.example.funstory.utils.reduceImageFile
 import com.example.funstory.utils.rotateImageFile
@@ -26,6 +27,7 @@ import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
 import java.io.File
 
+@Suppress("DEPRECATION")
 @AndroidEntryPoint
 class AddStory : AppCompatActivity() {
     private lateinit var binding: ActivityAddStoryBinding
@@ -55,7 +57,7 @@ class AddStory : AppCompatActivity() {
     binding.btnCamera.setOnClickListener{ startCameraX() }
     binding.btnGallery.setOnClickListener{ startGallery() }
 
-    binding.btnUpload.setOnClickListener{
+    binding.buttonAdd.setOnClickListener{
         if (selectedFile != null) {
             val description = binding.edtDescription.text.toString()
             val photo = processImage()

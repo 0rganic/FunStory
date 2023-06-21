@@ -19,7 +19,7 @@
         android:theme="@style/Theme.FunStory"
         tools:targetApi="31">
         <activity
-            android:name=".Ui.DetailStory"
+            android:name=".Ui.detailStory.DetailStory"
             android:exported="false" />
         <activity
             android:name=".Ui.SplashScreen.SplashScreen"
@@ -31,20 +31,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Ui.Camera"
+            android:name=".Ui.camera.Camera"
             android:exported="false" />
         <activity
-            android:name=".Ui.AddStory"
+            android:name=".Ui.addStory.AddStory"
             android:exported="true"
-            android:parentActivityName=".Ui.MainActivity" />
+            android:parentActivityName=".Ui.main.MainActivity" />
         <activity
-            android:name=".Ui.Register"
+            android:name=".Ui.register.Register"
             android:exported="false" />
         <activity
-            android:name=".Ui.Login"
+            android:name=".Ui.login.Login"
             android:exported="false" />
         <activity
-            android:name=".Ui.MainActivity"
+            android:name=".Ui.main.MainActivity"
             android:exported="true" />
     </application>
 

@@ -1,4 +1,4 @@
-package com.example.funstory.Ui
+package com.example.funstory.Ui.login
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,7 +8,8 @@ import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.example.funstory.Ui.viewModel.LoginViewModel
+import com.example.funstory.Ui.main.MainActivity
+import com.example.funstory.Ui.register.Register
 import com.example.funstory.databinding.ActivityLoginBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -38,12 +39,12 @@ class Login : AppCompatActivity() {
 
     private fun loginPageActivity(){
             binding.btnLogin.setOnClickListener {
-                val email = binding.edtEmail.text.toString()
-                val password = binding.edtPassword.text.toString()
+                val email = binding.edLoginEmail.text.toString()
+                val password = binding.edLoginPassword.text.toString()
                 when {
-                    email.isEmpty() -> binding.edtEmail.error = "Email can't be empty"
-                    !Patterns.EMAIL_ADDRESS.matcher(email).matches() -> binding.edtEmail.error = "Invalid Email"
-                    password.isEmpty() -> binding.edtPassword.error = "Password can't be empty "
+                    email.isEmpty() -> binding.edLoginEmail.error = "Email can't be empty"
+                    !Patterns.EMAIL_ADDRESS.matcher(email).matches() -> binding.edLoginEmail.error = "Invalid Email"
+                    password.isEmpty() -> binding.edLoginPassword.error = "Password can't be empty "
                     else -> {
                         binding.loading.visibility = View.VISIBLE
                         login(email,password)

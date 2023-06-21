@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Ui.AddStory"
+    tools:context=".Ui.addStory.AddStory"
     android:orientation="vertical">
 
     <TextView
@@ -87,7 +87,7 @@
         android:textSize="14sp"/>
 
     <Button
-        android:id="@+id/btn_upload"
+        android:id="@+id/button_add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

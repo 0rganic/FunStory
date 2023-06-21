@@ -1,4 +1,4 @@
-package com.example.funstory.Ui
+package com.example.funstory.Ui.register
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,11 +7,9 @@ import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.example.funstory.R
-import com.example.funstory.Ui.viewModel.RegisterViewModel
+import com.example.funstory.Ui.login.Login
 import com.example.funstory.databinding.ActivityRegisterBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
@@ -30,14 +28,14 @@ class Register : AppCompatActivity() {
 
     private fun registerActivityPage() {
         binding.btnSignup.setOnClickListener {
-            val name = binding.edtRegisterName.text.toString()
+            val name = binding.edRegisterName.text.toString()
             val email = binding.edRegisterEmail.text.toString()
-            val password = binding.edtPassword.text.toString()
+            val password = binding.edRegisterPassword.text.toString()
 
             when{
-                name.isEmpty() -> binding.edtRegisterName.error = "Name can't be empty"
+                name.isEmpty() -> binding.edRegisterName.error = "Name can't be empty"
                 email.isEmpty() -> binding.edRegisterEmail.error = "Email can't be empty"
-                password.isEmpty() -> binding.edtPassword.error = "Password can't be empty"
+                password.isEmpty() -> binding.edRegisterPassword.error = "Password can't be empty"
                 else -> {
                     binding.loading.visibility = View.VISIBLE
                     register(name, email, password)

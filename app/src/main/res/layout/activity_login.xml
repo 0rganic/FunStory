@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Ui.Login"
+    tools:context=".Ui.login.Login"
     android:gravity="center">
 
     <ProgressBar
@@ -44,13 +44,12 @@
             android:text="@string/email" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/emailInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:boxBackgroundMode="none">
 
             <EditText
-                android:id="@+id/edt_email"
+                android:id="@+id/ed_login_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/login_edittext"
@@ -86,7 +85,7 @@
 
         <com.example.funstory.Ui.PasswordInput
             android:alpha="1"
-            android:id="@+id/edt_password"
+            android:id="@+id/ed_login_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
