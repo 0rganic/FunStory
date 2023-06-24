@@ -121,7 +121,6 @@
             android:text="@string/password" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/ed_register_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -165,7 +164,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:progressTint="@color/blue_dark"/>
+        android:progressTint="@color/blue_dark"
+        />
 
 
     <LinearLayout

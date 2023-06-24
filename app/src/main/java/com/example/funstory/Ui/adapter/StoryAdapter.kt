@@ -5,12 +5,26 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.paging.PagingDataAdapter
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.funstory.R
 import com.example.funstory.data.remote.response.Story
 
-class StoryAdapter(private val listStory: List<Story>, private val onItemClick: (story: Story) -> Unit) : RecyclerView.Adapter<StoryAdapter.ViewHolder>() {
+class StoryAdapter(private val onItemClick: (story: Story) -> Unit) : PagingDataAdapter<Story, StoryAdapter.ViewHolder>(CALLBACK) {
+
+    companion object{
+        val CALLBACK = object : DiffUtil.ItemCallback<Story>() {
+            override fun areItemsTheSame(oldItem: Story, newItem: Story): Boolean {
+                return oldItem == newItem
+            }
+
+            override fun areContentsTheSame(oldItem: Story, newItem: Story): Boolean {
+                return oldItem.id == newItem.id
+            }
+        }
+    }
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val tvName: TextView = itemView.findViewById(R.id.tv_item_name)
         private val imgStory: ImageView = itemView.findViewById(R.id.item_photo)
@@ -31,12 +45,13 @@ class StoryAdapter(private val listStory: List<Story>, private val onItemClick: 
         return ViewHolder(view)
     }
 
-    override fun getItemCount(): Int {
-        return listStory.size
-    }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val story = listStory[position]
-        holder.bind(story)
+        val story = getItem(position)
+        if (story != null) {
+            holder.bind(story)
+        }
     }
+
+
 }

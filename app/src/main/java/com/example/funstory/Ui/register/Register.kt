@@ -22,6 +22,8 @@ class Register : AppCompatActivity() {
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.loading.visibility = View.INVISIBLE
+
         registerActivityPage()
         loginPage()
     }
