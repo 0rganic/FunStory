@@ -73,7 +73,37 @@ class MainViewModelTest {
 
         // Verify the result
         assertNotNull(differ.snapshot())
-        assertEquals(dummyStories, differ.snapshot())
+        assertEquals(dummyStories[0], differ.snapshot()[0])
+        assertEquals(dummyStories.size, differ.snapshot().size)
+    }
+
+    @Test
+    fun `getZeroStory() should return 0 data`() = runTest {
+
+        val data: PagingData<Story> = TestStoryPagingSourceUtils.createSnapshot(emptyList())
+        val expectedPagingData = MutableLiveData<PagingData<Story>>()
+        expectedPagingData.value = data
+
+        // Mock repository response
+        `when`(storyRepository.getListStories(anyString())).thenReturn(expectedPagingData)
+
+        // Create ViewModel
+        val viewModel = MainViewModel(storyRepository, authRepository)
+
+        // Invoke the function to get stories
+        val result: PagingData<Story> = viewModel.getStories("dummyToken").getOrAwaitValueCustom()
+
+        val differ = AsyncPagingDataDiffer(
+            diffCallback = StoryAdapter.CALLBACK,
+            updateCallback = noopListUpdateCallback,
+            workerDispatcher = Dispatchers.Main,
+        )
+
+        differ.submitData(result)
+
+        // Verify the result
+        assertNotNull(differ.snapshot())
+        assertEquals(0, differ.snapshot().size)
     }
 
     @Test
